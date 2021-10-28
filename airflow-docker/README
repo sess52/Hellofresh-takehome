@@ -1,0 +1,15 @@
+This reposity is the partial solution to the Hello Fresh data take home task.
+
+Unfotunetly this is not full solution and this will not integrate properly with Airflow and Kubernetes, due to local installation issues.
+
+What is provided are the following scripts:
+
+* In the dags folder exists send_recipes_to_s3.py (This script is the specifies the order which other python scripts will be executed.)
+
+* retreive_recipies.py (This is the main python script that will extract the recipe data from the api and transform it into csv file formats and place them into the s3_bucket staging folder)
+
+* send_csv_to_s3.py (This program will send the csv's to the s3 bucket)
+
+* test_data.py (This script contains a short battery of unit tests that can be applied to the output CSV's from retreive_recipes)
+
+The Dag would in theory run retreive_recipies followed by send_csv_to_s3.
